@@ -1,0 +1,19 @@
+#ifndef MYML
+#define MYML
+
+#include "BBox.hxx"
+#include "Basic.hxx"
+#include "Euler.hxx"
+#include "Mat.hxx"
+#include "Normal.hxx"
+#include "Point.hxx"
+#include "Quat.hxx"
+#include "Ray.hxx"
+#include "Rgb.hxx"
+#include "Rgba.hxx"
+#include "Scale.hxx"
+#include "Transform.hxx"
+#include "Val.hxx"
+#include "Vec.hxx"
+
+#endif  // MYML

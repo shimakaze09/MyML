@@ -1,0 +1,6 @@
+[submodule "MyTemplate"]
+	path = external/MyTemplate
+	url = https://github.com/shimakaze09/MyTemplate.git
+[submodule "MyCMake"]
+	path = external/MyCMake
+	url = https://github.com/shimakaze09/MyCMake.git
