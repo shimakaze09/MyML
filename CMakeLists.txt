@@ -42,21 +42,13 @@ ELSE()
             GIT_TAG "v0.1"
     )
     FETCHCONTENT_MAKEAVAILABLE(MyCMake)
-    MESSAGE(STATUS "MyCMake-${VERSION} downloaded")
+    MESSAGE(STATUS "MyCMake-0.1 downloaded")
 ENDIF()
 
 # Set the default install prefix
 INIT_INSTALL_PREFIX()
 
 ADD_DEP(MyTemplate 0.1)
-
-INCLUDE_DIRECTORIES(
-        "${CMAKE_SOURCE_DIR}/include"
-)
-
-LINK_DIRECTORIES(
-        "${CMAKE_SOURCE_DIR}/lib"
-)
 
 ADD_SUB_DIRS_REC(src)
 
