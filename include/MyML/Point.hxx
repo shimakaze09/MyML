@@ -7,22 +7,71 @@
 
 #include "Vec.hxx"
 
-#include "Interfaces/IArray/IEuclideanA.hxx"
-#include "Interfaces/IArray/IArrayUtil.hxx"
 #include "Interfaces/IArray/IArray1D_Util.hxx"
+#include "Interfaces/IArray/IArrayUtil.hxx"
 
-namespace My{
-template<typename T, size_t N>
-    struct vec;
-template<typename T, size_t N>
-struct val;
+#include "Interfaces/IArray/IEuclideanA.hxx"
 
-template<typename T, size_t N>
-struct point : SIIT_CRTP<TemplateList<IArray1D_Util, IArrayUtil, IEuclideanA>, point<T, N>, TypeList<TypeList<T, Size<N>>, T, vec<T, N>>> {
-  using SIIT_CRTP<TemplateList<IArray1D_Util, IArrayUtil, IEuclideanA>, point<T, N>, TypeList<TypeList<T, Size<N>>, T, vec<T, N>>>::SIIT_CRTP;
+namespace My {
+template <typename T, size_t N>
+struct vec;
+
+template <typename T, size_t N>
+struct point
+    : SIIT_CRTP<TemplateList<IArray1D_Util, IArrayUtil, IEuclideanA>,
+                point<T, N>,
+                TypeList<TypeList<T, Size<N>>, T, vec<T, N>, point<T, N>>> {
+  using SIIT_CRTP<
+      TemplateList<IArray1D_Util, IArrayUtil, IEuclideanA>, point<T, N>,
+      TypeList<TypeList<T, Size<N>>, T, vec<T, N>, point<T, N>>>::SIIT_CRTP;
+
+  template <typename Container>
+  static const point combine(const Container& points, T weight) {
+    point rst{static_cast<T>(0)};
+    for (const auto& p : points) {
+      for (size_t i = 0; i < N; i++)
+        rst[i] += weight * p[i];
+    }
+    return rst;
+  }
+
+  template <typename PContainer, typename WContainer>
+  static const point combine(PContainer points, WContainer weights) {
+    assert(points.size() == weights.size());
+    point rst{static_cast<T>(0)};
+    auto witer = weights.begin();
+    for (const auto& p : points) {
+      T weight = *witer;
+      for (size_t i = 0; i < N; i++)
+        rst[i] += weight * p[i];
+      ++witer;
+    }
+    return rst;
+  }
+
+ private:
+  template <typename Base, typename Impl, typename ArgList>
+  friend struct IEuclideanA;
+
+  point& impl_get_point() noexcept { return *this; }
+
+  static const point impl_move(const point&, const point& p) noexcept {
+    return p;
+  }
+
+  template <typename Base, typename Impl, typename ArgList>
+  friend struct IAffine;
+
+  const vec<T, N> impl_affine_minus(const point& y) const noexcept {
+    const point& x = *this;
+    vec<T, N> rst;
+    for (size_t i = 0; i < N; i++)
+      rst[i] = x[i] - y[i];
+    return rst;
+  }
 };
 
-template<size_t N>
+template <size_t N>
 using pointf = point<float, N>;
 
 using pointf1 = pointf<1>;
@@ -30,7 +79,7 @@ using pointf2 = pointf<2>;
 using pointf3 = pointf<3>;
 using pointf4 = pointf<4>;
 
-template<size_t N>
+template <size_t N>
 using pointi = point<int, N>;
 
 using pointi1 = pointi<1>;
@@ -38,13 +87,13 @@ using pointi2 = pointi<2>;
 using pointi3 = pointi<3>;
 using pointi4 = pointi<4>;
 
-template<size_t N>
+template <size_t N>
 using pointu = point<unsigned, N>;
 
 using pointu1 = pointu<1>;
 using pointu2 = pointu<2>;
 using pointu3 = pointu<3>;
 using pointu4 = pointu<4>;
-}
+}  // namespace My
 
-#endif //POINT_HXX
+#endif  //POINT_HXX

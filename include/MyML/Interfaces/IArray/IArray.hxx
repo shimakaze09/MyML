@@ -14,7 +14,7 @@
 #include <iostream>
 #include <vector>
 
-#include <assert.h>
+#include <cassert>
 #include <cmath>
 
 namespace My {
@@ -56,7 +56,7 @@ struct IArray
   inline const Impl rmv_epsilon() const noexcept {
     Impl rst{};
     for (size_t i = 0; i < N; i++)
-      rst[i] = Ubpa::rmv_epsilon((*this)[i]);
+      rst[i] = My::rmv_epsilon((*this)[i]);
     return rst;
   }
 
@@ -80,7 +80,7 @@ struct IArray
     Impl rst{};
     F one_minus_t = static_cast<F>(1) - t;
     for (size_t i = 0; i < N; i++)
-      rst[i] = Ubpa::lerp(x[i], y[i], t);
+      rst[i] = My::lerp(x[i], y[i], t);
     return rst;
   }
 

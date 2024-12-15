@@ -1,9 +1,9 @@
 //
-// Created by Admin on 10/12/2024.
+// Created by Admin on 16/12/2024.
 //
 
-#ifndef RAY_HXX
-#define RAY_HXX
+#ifndef LINE_HXX
+#define LINE_HXX
 
 #include "Point.hxx"
 #include "Vec.hxx"
@@ -14,22 +14,17 @@
 
 namespace My {
 template <typename T, size_t N>
-struct ray
-    : SIIT_CRTP<TemplateList<IInOut, IEuclideanLine>, ray<T, N>,
+struct line
+    : SIIT_CRTP<TemplateList<IInOut, IEuclideanLine>, line<T, N>,
                 TypeList<TypeList<T, Size<N>>, T, vec<T, N>, point<T, N>>> {
   using Base =
-      SIIT_CRTP<TemplateList<IInOut, IEuclideanLine>, ray<T, N>,
+      SIIT_CRTP<TemplateList<IInOut, IEuclideanLine>, line<T, N>,
                 TypeList<TypeList<T, Size<N>>, T, vec<T, N>, point<T, N>>>;
+  using Base::Base;
 
-  T tmin;
-  T tmax;
-
-  ray(const point<T, N>& o, const vec<T, N>& d, T tmin = EPSILON<T>,
-      T tmax = std::numeric_limits<T>::max())
-      : Base{o, d}, tmin{tmin}, tmax{tmax} {}
+  line(const point<T, N>& o, const vec<T, N>& d) : Base{o, d} {}
 
   void print(std::ostream& os = std::cout) const;
-
   // (isIntersect, (w, u, v), t)
   const std::tuple<bool, std::array<T, 3>, T> intersect_triangle(
       const point<T, 3>& v0, const point<T, 3>& v1,
@@ -43,12 +38,10 @@ struct ray
 };
 
 template <size_t N>
-using rayf = ray<float, N>;
-using rayf1 = rayf<1>;
-using rayf2 = rayf<2>;
-using rayf3 = rayf<3>;
+using linef = line<float, N>;
+using linef1 = linef<1>;
+using linef2 = linef<2>;
+using linef3 = linef<3>;
 }  // namespace My
 
-#include "detail/Ray.inl"
-
-#endif  //RAY_HXX
+#endif  //LINE_HXX

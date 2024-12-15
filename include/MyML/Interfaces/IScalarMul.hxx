@@ -9,7 +9,7 @@
 
 #include <MyTemplate/SI.hxx>
 
-#include <assert.h>
+#include <cassert>
 
 namespace My {
 template <typename Base, typename Impl, typename ArgList>

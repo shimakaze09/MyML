@@ -70,7 +70,7 @@ template <typename T, size_t N>
 const point<T, N> bbox<T, N>::lerp(const val<T, N>& t) const {
   point<T, N> rst{};
   for (size_t i = 0; i < N; i++)
-    rst[i] = Ubpa::lerp(minP()[i], maxP()[i], t[i]);
+    rst[i] = My::lerp(minP()[i], maxP()[i], t[i]);
   return rst;
 }
 
