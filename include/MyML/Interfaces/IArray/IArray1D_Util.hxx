@@ -7,11 +7,14 @@
 
 #include "../../Basic.hxx"
 #include "IArray1D.hxx"
+#include "IArrayUtil.hxx"
 
 namespace My {
 template <typename Base, typename Impl, typename ArgList>
-struct IArray1D_Util : SIVT_CRTP<TemplateList<IArray1D>, Base, Impl, ArgList> {
-  using SIVT_CRTP<TemplateList<IArray1D>, Base, Impl, ArgList>::SIVT_CRTP;
+struct IArray1D_Util
+    : SIVT_CRTP<TemplateList<IArray1D, IArrayUtil>, Base, Impl, ArgList> {
+  using SIVT_CRTP<TemplateList<IArray1D, IArrayUtil>, Base, Impl,
+                  ArgList>::SIVT_CRTP;
 
   using T = Arg_T<ArgList>;
   using F = Arg_F<ArgList>;

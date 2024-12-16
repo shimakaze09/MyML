@@ -8,7 +8,6 @@
 #include "Vec.hxx"
 
 #include "Interfaces/IArray/IArray1D_Util.hxx"
-#include "Interfaces/IArray/IArrayUtil.hxx"
 
 #include "Interfaces/IArray/IEuclideanA.hxx"
 
@@ -18,11 +17,10 @@ struct vec;
 
 template <typename T, size_t N>
 struct point
-    : SIIT_CRTP<TemplateList<IArray1D_Util, IArrayUtil, IEuclideanA>,
-                point<T, N>,
+    : SIIT_CRTP<TemplateList<IArray1D_Util, IEuclideanA>, point<T, N>,
                 TypeList<TypeList<T, Size<N>>, T, vec<T, N>, point<T, N>>> {
   using SIIT_CRTP<
-      TemplateList<IArray1D_Util, IArrayUtil, IEuclideanA>, point<T, N>,
+      TemplateList<IArray1D_Util, IEuclideanA>, point<T, N>,
       TypeList<TypeList<T, Size<N>>, T, vec<T, N>, point<T, N>>>::SIIT_CRTP;
 
   template <typename Container>

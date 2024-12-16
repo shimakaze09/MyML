@@ -159,8 +159,8 @@ struct mul<3> {
   }
 
   template <typename M>
-  static const typename M::ImplV run(const M& m,
-                                     const typename M::ImplV& v) noexcept {
+  static const typename M::Vector run(const M& m,
+                                      const typename M::Vector& v) noexcept {
     static_assert(M::N == 3);
     using F = typename M::F;
 
@@ -222,8 +222,8 @@ struct mul<4> {
   }
 
   template <typename M>
-  static const typename M::ImplV run(const M& m,
-                                     const typename M::ImplV& v) noexcept {
+  static const typename M::Vector run(const M& m,
+                                      const typename M::Vector& v) noexcept {
     static_assert(M::N == 4);
     using F = typename M::F;
 
