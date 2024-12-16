@@ -6,20 +6,21 @@
 #define BBOX_HXX
 
 #include "Point.hxx"
+#include "Val.hxx"
 #include "Vec.hxx"
 
 #include <limits>
 
 namespace My {
 template <typename T, size_t N>
-struct bbox : SIIT_CRTP<TemplateList<IArrayUtil>, bbox<T, N>,
+struct bbox : SIIT_CRTP<TemplateList<IArrayInOut>, bbox<T, N>,
                         TypeList<TypeList<point<T, N>, Size<2>>, T>> {
-  using Base = SIIT_CRTP<TemplateList<IArrayUtil>, bbox<T, N>,
+  using Base = SIIT_CRTP<TemplateList<IArrayInOut>, bbox<T, N>,
                          TypeList<TypeList<point<T, N>, Size<2>>, T>>;
   using Base::Base;
 
-   bbox();
-   bbox(const point<T, N>& minP, const point<T, N>& maxP);
+  bbox();
+  bbox(const point<T, N>& minP, const point<T, N>& maxP);
   static const bbox minmax(const point<T, N>& p0, const point<T, N>& p1);
 
   point<T, N>& minP() noexcept { return (*this)[0]; }
@@ -47,13 +48,13 @@ struct bbox : SIIT_CRTP<TemplateList<IArrayUtil>, bbox<T, N>,
   const vec<T, N> offset(const point<T, N>& p) const;
 
   const bbox combine(const bbox& rhs) const;
-  bbox& combine_with(const bbox& rhs);
+  bbox& combine_to_self(const bbox& rhs);
 
   const bbox combine(const point<T, N>& p) const;
-  bbox& combine_with(const point<T, N>& p);
+  bbox& combine_to_self(const point<T, N>& p);
 
   static const bbox intersect(const bbox& lhs, const bbox& rhs);
-  bbox& intersect_with(const bbox& rhs);
+  bbox& intersect_to_self(const bbox& rhs);
 };
 
 template <size_t N>
