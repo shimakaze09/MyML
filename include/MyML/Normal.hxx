@@ -8,7 +8,6 @@
 #include "Mat.hxx"
 
 #include "Interfaces/IArray/IArray1D_Util.hxx"
-#include "Interfaces/IArray/IArrayUtil.hxx"
 #include "Interfaces/IArray/IEuclideanV.hxx"
 
 namespace My {
@@ -16,10 +15,10 @@ template <typename T, size_t N>
 struct vec;
 
 template <typename T>
-struct normal : SIIT_CRTP<TemplateList<IArray1D_Util, IArrayUtil, IEuclideanV>,
-                          normal<T>, TypeList<TypeList<T, Size<3>>, T>> {
-  using SIIT_CRTP<TemplateList<IArray1D_Util, IArrayUtil, IEuclideanV>,
-                  normal<T>, TypeList<TypeList<T, Size<3>>, T>>::SIIT_CRTP;
+struct normal : SIIT_CRTP<TemplateList<IArray1D_Util, IEuclideanV>, normal<T>,
+                          TypeList<TypeList<T, Size<3>>, T>> {
+  using SIIT_CRTP<TemplateList<IArray1D_Util, IEuclideanV>, normal<T>,
+                  TypeList<TypeList<T, Size<3>>, T>>::SIIT_CRTP;
 
   inline explicit normal(const vec<T, 3>& v) {
     for (size_t i = 0; i < 3; i++)

@@ -8,16 +8,16 @@
 #include "Interfaces/IArray/IArray1D_Util.hxx"
 #include "Interfaces/IArray/IArrayHadamardProduct.hxx"
 #include "Interfaces/IArray/IArrayScalarMul.hxx"
-#include "Interfaces/IArray/IArrayUtil.hxx"
 
 namespace My {
 template <typename T, size_t N>
-struct scale : SIIT_CRTP<TemplateList<IArray1D_Util, IArrayUtil,
-                                      IArrayHadamardProduct, IArrayScalarMul>,
-                         scale<T, N>, TypeList<TypeList<T, Size<N>>, T>> {
-  using SIIT_CRTP<TemplateList<IArray1D_Util, IArrayUtil, IArrayHadamardProduct,
-                               IArrayScalarMul>,
-                  scale<T, N>, TypeList<TypeList<T, Size<N>>, T>>::SIIT_CRTP;
+struct scale
+    : SIIT_CRTP<
+          TemplateList<IArray1D_Util, IArrayHadamardProduct, IArrayScalarMul>,
+          scale<T, N>, TypeList<TypeList<T, Size<N>>, T>> {
+  using SIIT_CRTP<
+      TemplateList<IArray1D_Util, IArrayHadamardProduct, IArrayScalarMul>,
+      scale<T, N>, TypeList<TypeList<T, Size<N>>, T>>::SIIT_CRTP;
 };
 
 template <size_t N>

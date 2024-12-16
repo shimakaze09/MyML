@@ -9,17 +9,15 @@
 #include "Interfaces/IArray/IArrayAdd.hxx"
 #include "Interfaces/IArray/IArrayHadamardProduct.hxx"
 #include "Interfaces/IArray/IArrayScalarMul.hxx"
-#include "Interfaces/IArray/IArrayUtil.hxx"
 #include "Interfaces/ILinear.hxx"
 
 namespace My {
 template <typename T>
-struct rgb
-    : SIIT_CRTP<TemplateList<IArray1D_Util, IArrayUtil, IArrayHadamardProduct,
-                             ILinear, IArrayScalarMul, IArrayAdd>,
-                rgb<T>, TypeList<TypeList<T, Size<3>>, T>> {
-  using SIIT_CRTP<TemplateList<IArray1D_Util, IArrayUtil, IArrayHadamardProduct,
-                               ILinear, IArrayScalarMul, IArrayAdd>,
+struct rgb : SIIT_CRTP<TemplateList<IArray1D_Util, IArrayHadamardProduct,
+                                    ILinear, IArrayScalarMul, IArrayAdd>,
+                       rgb<T>, TypeList<TypeList<T, Size<3>>, T>> {
+  using SIIT_CRTP<TemplateList<IArray1D_Util, IArrayHadamardProduct, ILinear,
+                               IArrayScalarMul, IArrayAdd>,
                   rgb<T>, TypeList<TypeList<T, Size<3>>, T>>::SIIT_CRTP;
 
   T illumination() const {

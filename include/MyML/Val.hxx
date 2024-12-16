@@ -17,20 +17,17 @@
 #include "Interfaces/IArray/IArrayAdd.hxx"
 #include "Interfaces/IArray/IArrayHadamardProduct.hxx"
 #include "Interfaces/IArray/IArrayScalarMul.hxx"
-#include "Interfaces/IArray/IArrayUtil.hxx"
 
 #include <MyTemplate/SI.hxx>
 
 namespace My {
 template <typename T, size_t N>
-struct val
-    : SIIT_CRTP<TemplateList<IArrayAdd, IArrayScalarMul, IArrayHadamardProduct,
-                             IArray1D_Util, IArrayUtil>,
-                val<T, N>, TypeList<TypeList<T, Size<N>>, T>> {
-  using SIIT_CRTP<
-      TemplateList<IArrayAdd, IArrayScalarMul, IArrayHadamardProduct,
-                   IArray1D_Util, IArrayUtil>,
-      val<T, N>, TypeList<TypeList<T, Size<N>>, T>>::SIIT_CRTP;
+struct val : SIIT_CRTP<TemplateList<IArrayAdd, IArrayScalarMul,
+                                    IArrayHadamardProduct, IArray1D_Util>,
+                       val<T, N>, TypeList<TypeList<T, Size<N>>, T>> {
+  using SIIT_CRTP<TemplateList<IArrayAdd, IArrayScalarMul,
+                               IArrayHadamardProduct, IArray1D_Util>,
+                  val<T, N>, TypeList<TypeList<T, Size<N>>, T>>::SIIT_CRTP;
 
   val(const vec<T, N>& v) noexcept {
     for (size_t i = 0; i < N; i++)
