@@ -4,8 +4,6 @@
 
 #pragma once
 
-#include "Quat.hxx"
-
 #include "Interfaces/IArray/IArray1D_Util.hxx"
 
 namespace My {

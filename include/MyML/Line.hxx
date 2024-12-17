@@ -22,6 +22,7 @@ struct line : SIIT_CRTP<TemplateList<IInOut, ILine>, line<T, N>,
   }
 
   void print(std::ostream& os = std::cout) const;
+
   // (isIntersect, (w, u, v), t)
   const std::tuple<bool, std::array<T, 3>, T> intersect(
       const triangle<T, 3>& tri) const noexcept;
@@ -50,3 +51,5 @@ using linef1 = linef<1>;
 using linef2 = linef<2>;
 using linef3 = linef<3>;
 }  // namespace My
+
+#include "detail/Line.inl"
