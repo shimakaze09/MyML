@@ -12,9 +12,6 @@
 
 namespace My {
 template <typename T, size_t N>
-struct vec;
-
-template <typename T, size_t N>
 struct point
     : SIIT_CRTP<TemplateList<IArray1D_Util, IEuclideanA>, point<T, N>,
                 TypeList<TypeList<T, Size<N>>, T, vec<T, N>, point<T, N>>> {
@@ -23,28 +20,10 @@ struct point
       TypeList<TypeList<T, Size<N>>, T, vec<T, N>, point<T, N>>>::SIIT_CRTP;
 
   template <typename Container>
-  static const point combine(const Container& points, T weight) {
-    point rst{static_cast<T>(0)};
-    for (const auto& p : points) {
-      for (size_t i = 0; i < N; i++)
-        rst[i] += weight * p[i];
-    }
-    return rst;
-  }
+  static const point combine(const Container& points, T weight) noexcept;
 
   template <typename PContainer, typename WContainer>
-  static const point combine(PContainer points, WContainer weights) {
-    assert(points.size() == weights.size());
-    point rst{static_cast<T>(0)};
-    auto witer = weights.begin();
-    for (const auto& p : points) {
-      T weight = *witer;
-      for (size_t i = 0; i < N; i++)
-        rst[i] += weight * p[i];
-      ++witer;
-    }
-    return rst;
-  }
+  static const point combine(PContainer points, WContainer weights) noexcept;
 };
 
 template <size_t N>
@@ -71,3 +50,5 @@ using pointu2 = pointu<2>;
 using pointu3 = pointu<3>;
 using pointu4 = pointu<4>;
 }  // namespace My
+
+#include "detail/Point.inl"

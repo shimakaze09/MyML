@@ -17,7 +17,9 @@ struct line : SIIT_CRTP<TemplateList<IInOut, ILine>, line<T, N>,
                          TypeList<Arg_Empty, T, vec<T, N>, point<T, N>>>;
   using Base::Base;
 
-  line(const point<T, N>& p, const vec<T, N>& dir) { this->init_ILine(p, dir); }
+  line(const point<T, N>& p, const vec<T, N>& dir) noexcept {
+    this->init_ILine(p, dir);
+  }
 
   void print(std::ostream& os = std::cout) const;
   // (isIntersect, (w, u, v), t)
@@ -38,9 +40,7 @@ struct line : SIIT_CRTP<TemplateList<IInOut, ILine>, line<T, N>,
   template <typename Base, typename Impl, typename ArgList>
   friend struct IAffineRealSubspace;
 
-  static const line impl_move(const line& line, const point<T, N>& p) noexcept {
-    return {p, line.dir()};
-  }
+  static const line impl_move(const line& line, const point<T, N>& p) noexcept;
 };
 
 template <size_t N>
@@ -50,4 +50,3 @@ using linef1 = linef<1>;
 using linef2 = linef<2>;
 using linef3 = linef<3>;
 }  // namespace My
-
