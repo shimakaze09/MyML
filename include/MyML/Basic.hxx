@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef BASIC_HXX
-#define BASIC_HXX
+#pragma once
 
 #include <cmath>
 
@@ -40,4 +39,3 @@ T lerp(T x, T y, F t) noexcept;
 
 #include "detail/Basic.inl"
 
-#endif  //BASIC_HXX

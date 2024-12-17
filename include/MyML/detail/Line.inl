@@ -1,5 +1,4 @@
-#ifndef LINE_INL
-#define LINE_INL
+#pragma once
 
 namespace My {
 template <typename T, size_t N>
@@ -93,5 +92,3 @@ const std::tuple<bool, T, T> line<T, N>::intersect(const bbox<T, N>& box,
   return {true, tmin, tmax};
 }
 }  // namespace My
-
-#endif  // LINE_INL

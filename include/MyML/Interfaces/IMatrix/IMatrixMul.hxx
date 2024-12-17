@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef IMATRIXMUL_HXX
-#define IMATRIXMUL_HXX
+#pragma once
 
 #include "../IMul.hxx"
 #include "IMatrix.hxx"
@@ -41,5 +40,3 @@ struct IMatrixMul
   }
 };
 }  // namespace My
-
-#endif  //IMATRIXMUL_HXX

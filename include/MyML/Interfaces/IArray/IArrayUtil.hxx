@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef IARRAYUTIL_HXX
-#define IARRAYUTIL_HXX
+#pragma once
 
 #include "IArrayCast.hxx"
 #include "IArrayInOut.hxx"
@@ -16,5 +15,3 @@ struct IArrayUtil
                   ArgList>::SIVT_CRTP;
 };
 }  // namespace My
-
-#endif  //IARRAYUTIL_HXX

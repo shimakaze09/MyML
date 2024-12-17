@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef INORMAL_HXX
-#define INORMAL_HXX
+#pragma once
 
 #include "../Basic.hxx"
 #include "ILinear.hxx"
@@ -49,5 +48,3 @@ struct INorm : SIVT_CRTP<TemplateList<IMetric, ILinear>, Base, Impl, ArgList> {
   }
 };
 }  // namespace My
-
-#endif  //INORMAL_HXX

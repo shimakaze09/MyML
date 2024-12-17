@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef ISCALARMUL_HXX
-#define ISCALARMUL_HXX
+#pragma once
 
 #include "Arg.hxx"
 
@@ -59,5 +58,3 @@ struct IScalarMul : Base {
   }
 };
 }  // namespace My
-
-#endif  //ISCALARMUL_HXX

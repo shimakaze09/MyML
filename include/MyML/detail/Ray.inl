@@ -1,5 +1,4 @@
-#ifndef RAY_INL
-#define RAY_INL
+#pragma once
 
 namespace My {
 template <typename T, size_t N>
@@ -47,5 +46,3 @@ const std::tuple<bool, T, T> ray<T, N>::intersect(
   return to_line().intersect(box, tmin, tmax);
 }
 }  // namespace My
-
-#endif  // RAY_INL

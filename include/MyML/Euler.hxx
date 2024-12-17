@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef EULER_HXX
-#define EULER_HXX
+#pragma once
 
 #include "Quat.hxx"
 #include "Vec.hxx"
@@ -59,5 +58,3 @@ struct euler : SIIT_CRTP<TemplateList<IArray1D_Util, IArray>, euler<T>,
 
 using eulerf = euler<float>;
 }  // namespace My
-
-#endif  //EULER_HXX

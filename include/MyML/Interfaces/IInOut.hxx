@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef IINOUT_HXX
-#define IINOUT_HXX
+#pragma once
 
 #include <iostream>
 
@@ -33,5 +32,3 @@ struct IInOut : Base {
   }
 };
 }  // namespace My
-
-#endif  //IINOUT_HXX

@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef IARRAYINOUT_HXX
-#define IARRAYINOUT_HXX
+#pragma once
 
 #include "../../Basic.hxx"
 #include "../IInOut.hxx"
@@ -39,5 +38,3 @@ struct IArrayInOut
   }
 };
 }  // namespace My
-
-#endif  //IARRAYINOUT_HXX

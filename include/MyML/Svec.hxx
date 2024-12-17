@@ -2,8 +2,7 @@
 // Created by Admin on 17/12/2024.
 //
 
-#ifndef SVEC_HXX
-#define SVEC_HXX
+#pragma once
 
 #include "Mat.hxx"
 
@@ -62,5 +61,3 @@ using svecf = svec<float>;
 }  // namespace My
 
 #include "detail/Svec.inl"
-
-#endif  //SVEC_HXX

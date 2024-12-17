@@ -2,8 +2,7 @@
 // Created by Admin on 16/12/2024.
 //
 
-#ifndef PLANE_HXX
-#define PLANE_HXX
+#pragma once
 
 #include "Point.hxx"
 #include "Vec.hxx"
@@ -30,4 +29,3 @@ struct plane : SIIT_CRTP<TemplateList<IInOut, IPlane>, plane<T>,
 using planef = plane<float>;
 }  // namespace My
 
-#endif  //PLANE_HXX

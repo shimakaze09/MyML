@@ -1,5 +1,4 @@
-#ifndef SVEC_INL
-#define SVEC_INL
+#pragma once
 
 namespace My {
 template <typename T>
@@ -70,5 +69,3 @@ const std::tuple<bool, svec<T>> svec<T>::refract(T etai,
   return {true, svec{x, y, z}};
 }
 }  // namespace My
-
-#endif  // SVEC_INL

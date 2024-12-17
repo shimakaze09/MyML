@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef IMATRIXMUL_DETAIL_HXX
-#define IMATRIXMUL_DETAIL_HXX
+#pragma once
 
 namespace My::detail::IMatrixMul {
 template <size_t N>
@@ -241,5 +240,3 @@ struct mul<4> {
   }
 };
 }  // namespace My::detail::IMatrixMul
-
-#endif  //IMATRIXMUL_DETAIL_HXX

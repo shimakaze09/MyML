@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef IARRAYCAST_HXX
-#define IARRAYCAST_HXX
+#pragma once
 
 #include "IArray.hxx"
 
@@ -27,5 +26,3 @@ struct IArrayCast : SIVT_CRTP<TemplateList<IArray>, Base, Impl, ArgList> {
   }
 };
 }  // namespace My
-
-#endif  //IARRAYCAST_HXX

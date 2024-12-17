@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef IEUCLIDEANV_HXX
-#define IEUCLIDEANV_HXX
+#pragma once
 
 #include "../IInnerProduct.hxx"
 #include "../ILinear.hxx"
@@ -37,5 +36,3 @@ struct IEuclideanV
   }
 };
 }  // namespace My
-
-#endif  //IEUCLIDEANV_HXX

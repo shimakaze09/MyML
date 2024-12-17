@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef IARRAY_HXX
-#define IARRAY_HXX
+#pragma once
 
 #include "../../Basic.hxx"
 #include "../Arg.hxx"
@@ -103,4 +102,3 @@ struct IArray : Base, std::array<Arg_T<ArgList>, Arg_N<ArgList>> {
 };
 }  // namespace My
 
-#endif  //IARRAY_HXX

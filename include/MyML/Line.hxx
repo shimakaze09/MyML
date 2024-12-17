@@ -2,8 +2,7 @@
 // Created by Admin on 16/12/2024.
 //
 
-#ifndef LINE_HXX
-#define LINE_HXX
+#pragma once
 
 #include "BBox.hxx"
 #include "Triangle.hxx"
@@ -52,4 +51,3 @@ using linef2 = linef<2>;
 using linef3 = linef<3>;
 }  // namespace My
 
-#endif  //LINE_HXX

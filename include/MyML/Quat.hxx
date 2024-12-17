@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef QUAT_HXX
-#define QUAT_HXX
+#pragma once
 
 #include "Euler.hxx"
 #include "Point.hxx"
@@ -164,5 +163,3 @@ struct quat : SIIT_CRTP<TemplateList<IMul, IArrayUtil>, quat<T>,
 
 using quatf = quat<float>;
 }  // namespace My
-
-#endif  //QUAT_HXX

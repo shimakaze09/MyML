@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef IMATRIX_DETAIL_HXX
-#define IMATRIX_DETAIL_HXX
+#pragma once
 
 namespace My::detail::IMatrix {
 template <typename M, size_t N>
@@ -56,5 +55,3 @@ struct transpose<4> {
   }
 };
 }  // namespace My::detail::IMatrix
-
-#endif  //IMATRIX_DETAIL_HXX

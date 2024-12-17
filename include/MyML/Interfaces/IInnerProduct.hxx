@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef IINNERPRODUCT_HXX
-#define IINNERPRODUCT_HXX
+#pragma once
 
 #include "INormal.hxx"
 
@@ -67,5 +66,3 @@ struct IInnerProduct : SIVT_CRTP<TemplateList<INorm>, Base, Impl, ArgList> {
   inline F impl_norm() const noexcept { return std::sqrt(norm2()); }
 };
 }  // namespace My
-
-#endif  //IINNERPRODUCT_HXX

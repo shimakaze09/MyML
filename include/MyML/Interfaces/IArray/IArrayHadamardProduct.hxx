@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef IARRAYHADAMARDPRODUCT_HXX
-#define IARRAYHADAMARDPRODUCT_HXX
+#pragma once
 
 #include <MyTemplate/SI.hxx>
 #include "../IMul.hxx"
@@ -68,5 +67,3 @@ struct IArrayHadamardProduct
   }
 };
 }  // namespace My
-
-#endif  //IARRAYHADAMARDPRODUCT_HXX

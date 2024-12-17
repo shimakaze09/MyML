@@ -2,8 +2,7 @@
 // Created by Admin on 16/12/2024.
 //
 
-#ifndef IPLANE_HXX
-#define IPLANE_HXX
+#pragma once
 
 #include "IAffineRealSubspace.hxx"
 #include "IOPlane.hxx"
@@ -22,5 +21,3 @@ struct IPlane
   }
 };
 }  // namespace My
-
-#endif  //IPLANE_HXX

@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef NORMAL_HXX
-#define NORMAL_HXX
+#pragma once
 
 #include "Mat.hxx"
 
@@ -68,4 +67,3 @@ struct normal : SIIT_CRTP<TemplateList<IArray1D_Util, ICross>, normal<T>,
 using normalf = normal<float>;
 }  // namespace My
 
-#endif  //NORMAL_HXX

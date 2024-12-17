@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef ARG_HXX
-#define ARG_HXX
+#pragma once
 
 #include <MyTemplate/Num.hxx>
 #include <MyTemplate/TypeList.hxx>
@@ -26,5 +25,3 @@ using Arg_Vector = At_t<ArgList, 2>;
 template <typename ArgList>
 using Arg_Point = At_t<ArgList, 3>;
 }  // namespace My
-
-#endif  //ARG_HXX

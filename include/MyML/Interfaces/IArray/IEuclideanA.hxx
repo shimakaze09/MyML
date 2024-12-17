@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef IEUCLIDEANA_HXX
-#define IEUCLIDEANA_HXX
+#pragma once
 
 #include "IEuclideanV.hxx"
 
@@ -88,5 +87,3 @@ struct IEuclideanA
   }
 };
 }  // namespace My
-
-#endif  //IEUCLIDEANA_HXX

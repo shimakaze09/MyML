@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef BBOX_HXX
-#define BBOX_HXX
+#pragma once
 
 #include "Point.hxx"
 #include "Val.hxx"
@@ -81,4 +80,3 @@ using bboxu3 = bboxu<3>;
 
 #include "detail/BBox.inl"
 
-#endif  //BBOX_HXX

@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef IARRAY1D_HXX
-#define IARRAY1D_HXX
+#pragma once
 
 #include "IArray.hxx"
 
@@ -14,5 +13,3 @@ struct IArray1D : SIVT_CRTP<TemplateList<IArray>, Base, Impl, ArgList> {
   static_assert(std::is_same_v<Arg_T<ArgList>, Arg_F<ArgList>>);
 };
 }  // namespace My
-
-#endif  //IARRAY1D_HXX

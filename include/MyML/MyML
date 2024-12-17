@@ -1,5 +1,4 @@
-#ifndef MYML
-#define MYML
+#pragma once
 
 #include "BBox.hxx"
 #include "Basic.hxx"
@@ -17,5 +16,3 @@
 #include "Transform.hxx"
 #include "Val.hxx"
 #include "Vec.hxx"
-
-#endif  // MYML

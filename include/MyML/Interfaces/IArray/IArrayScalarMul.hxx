@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef IARRAYSCALARMUL_HXX
-#define IARRAYSCALARMUL_HXX
+#pragma once
 
 #include "../IScalarMul.hxx"
 #include "IArray.hxx"
@@ -44,5 +43,3 @@ struct IArrayScalarMul
   }
 };
 }  // namespace My
-
-#endif  //IARRAYSCALARMUL_HXX

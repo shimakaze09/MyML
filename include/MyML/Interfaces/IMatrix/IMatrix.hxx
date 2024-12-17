@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef IMATRIX_HXX
-#define IMATRIX_HXX
+#pragma once
 
 #include "../IArray/IArray.hxx"
 
@@ -98,5 +97,3 @@ struct IMatrix : SIVT_CRTP<TemplateList<IArray>, Base, Impl, ArgList> {
   const F* data() const noexcept { return &(*this)[0][0]; }
 };
 }  // namespace My
-
-#endif  //IMATRIX_HXX

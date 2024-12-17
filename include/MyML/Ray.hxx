@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef RAY_HXX
-#define RAY_HXX
+#pragma once
 
 #include "Line.hxx"
 
@@ -52,5 +51,3 @@ using rayf3 = rayf<3>;
 }  // namespace My
 
 #include "detail/Ray.inl"
-
-#endif  //RAY_HXX

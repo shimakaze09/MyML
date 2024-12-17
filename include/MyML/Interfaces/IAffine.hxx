@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef IAFFINE_HXX
-#define IAFFINE_HXX
+#pragma once
 
 #include "IAffineSubspace.hxx"
 
@@ -24,5 +23,3 @@ struct IAffine
   }
 };
 }  // namespace My
-
-#endif  //IAFFINE_HXX

@@ -2,8 +2,7 @@
 // Created by Admin on 16/12/2024.
 //
 
-#ifndef IAFFINESUBSPACE_HXX
-#define IAFFINESUBSPACE_HXX
+#pragma once
 
 #include "ILinear.hxx"
 
@@ -34,5 +33,3 @@ struct IAffineSubspace : Base {
   }
 };
 }  // namespace My
-
-#endif  //IAFFINESUBSPACE_HXX

@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef VEC_HXX
-#define VEC_HXX
+#pragma once
 
 #include "Interfaces/IArray/IArray1D_Util.hxx"
 #include "Interfaces/IArray/ICross.hxx"
@@ -47,5 +46,3 @@ using vecu2 = vecu<2>;
 using vecu3 = vecu<3>;
 using vecu4 = vecu<4>;
 }  // namespace My
-
-#endif  //VEC_HXX

@@ -2,8 +2,7 @@
 // Created by Admin on 16/12/2024.
 //
 
-#ifndef IOPLANE_HXX
-#define IOPLANE_HXX
+#pragma once
 
 #include "ILinear.hxx"
 
@@ -26,5 +25,3 @@ struct IOPlane : std::tuple<Arg_Vector<ArgList>>, Base {
   const Vector& normal() const noexcept { return std::get<Vector>(*this); }
 };
 }  // namespace My
-
-#endif  //IOPLANE_HXX

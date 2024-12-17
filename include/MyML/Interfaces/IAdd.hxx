@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef IADD_HXX
-#define IADD_HXX
+#pragma once
 
 namespace My {
 template <typename Base, typename Impl, typename ArgList>
@@ -29,5 +28,3 @@ struct IAdd : Base {
   inline Impl& operator-=(const Impl& y) noexcept { return operator+=(-y); }
 };
 }  // namespace My
-
-#endif  //IADD_HXX

@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef ILINEAR_HXX
-#define ILINEAR_HXX
+#pragma once
 
 #include "IAdd.hxx"
 #include "IScalarMul.hxx"
@@ -16,5 +15,3 @@ struct ILinear
                   ArgList>::SIVT_CRTP;
 };
 }  // namespace My
-
-#endif  //ILINEAR_HXX

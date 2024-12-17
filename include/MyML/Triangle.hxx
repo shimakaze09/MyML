@@ -2,8 +2,7 @@
 // Created by Admin on 17/12/2024.
 //
 
-#ifndef TRIANGLE_HXX
-#define TRIANGLE_HXX
+#pragma once
 
 #include "Point.hxx"
 #include "Val.hxx"
@@ -40,5 +39,3 @@ using trianglef = triangle<float, N>;
 using trianglef2 = trianglef<2>;
 using trianglef3 = trianglef<3>;
 }  // namespace My
-
-#endif  //TRIANGLE_HXX

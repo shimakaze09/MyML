@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef RGBA_HXX
-#define RGBA_HXX
+#pragma once
 
 #include "Rgb.hxx"
 
@@ -44,5 +43,3 @@ struct rgba : SIIT_CRTP<TemplateList<IArray1D_Util>, rgba<T>,
 
 using rgbaf = rgba<float>;
 }  // namespace My
-
-#endif  //RGBA_HXX

@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef IARRAY1D_UTIL_HXX
-#define IARRAY1D_UTIL_HXX
+#pragma once
 
 #include "../../Basic.hxx"
 #include "IArray1D.hxx"
@@ -74,5 +73,3 @@ struct IArray1D_Util
   }
 };
 }  // namespace My
-
-#endif  //IARRAY1D_UTIL_HXX

@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef IARRAYADD_HXX
-#define IARRAYADD_HXX
+#pragma once
 
 #include "../IAdd.hxx"
 #include "IArray.hxx"
@@ -58,5 +57,3 @@ struct IArrayAdd : SIVT_CRTP<TemplateList<IAdd, IArray>, Base, Impl, ArgList> {
   // }
 };
 }  // namespace My
-
-#endif  //IARRAYADD_HXX

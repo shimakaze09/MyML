@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef SCALE_HXX
-#define SCALE_HXX
+#pragma once
 
 #include "Interfaces/IArray/IArray1D_Util.hxx"
 #include "Interfaces/IArray/IArrayHadamardProduct.hxx"

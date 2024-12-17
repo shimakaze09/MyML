@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef IMUL_HXX
-#define IMUL_HXX
+#pragma once
 
 namespace My {
 template <typename Base, typename Impl, typename ArgList>
@@ -26,5 +25,3 @@ struct IMul : Base {
   }
 };
 }  // namespace My
-
-#endif  //IMUL_HXX

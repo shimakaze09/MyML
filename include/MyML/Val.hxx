@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef VAL_HXX
-#define VAL_HXX
+#pragma once
 
 #include "Euler.hxx"
 #include "Normal.hxx"
@@ -94,5 +93,3 @@ using valu2 = valu<2>;
 using valu3 = valu<3>;
 using valu4 = valu<4>;
 }  // namespace My
-
-#endif  //VAL_HXX

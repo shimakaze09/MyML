@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef IMATRIXINOUT_HXX
-#define IMATRIXINOUT_HXX
+#pragma once
 
 #include <MyTemplate/SI.hxx>
 #include "../../Basic.hxx"
@@ -30,5 +29,3 @@ struct IMatrixInOut
   }
 };
 }  // namespace My
-
-#endif  //IMATRIXINOUT_HXX

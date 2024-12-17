@@ -2,16 +2,15 @@
 // Created by Admin on 16/12/2024.
 //
 
-#ifndef IAFFINEREALSUBSPACE_HXX
-#define IAFFINEREALSUBSPACE_HXX
+#pragma once
 
 #include "IAffine.hxx"
 
 namespace My {
-template<typename Base, typename Impl, typename ArgList>
-    struct IAffineRealSubspace : std::tuple<Arg_Point<ArgList>>,
-        SIVT_CRTP<TemplateList<IAffineSubspace>, Base, Impl, ArgList>
-{
+template <typename Base, typename Impl, typename ArgList>
+struct IAffineRealSubspace
+    : std::tuple<Arg_Point<ArgList>>,
+      SIVT_CRTP<TemplateList<IAffineSubspace>, Base, Impl, ArgList> {
   using Point = Arg_Point<ArgList>;
   using Vector = Arg_Vector<ArgList>;
 
@@ -19,10 +18,14 @@ template<typename Base, typename Impl, typename ArgList>
   static_assert(ExistInstance_v<typename Vector::AllVBs, ILinear>);
   static_assert(Point::N == Vector::N);
 
-  using SIVT_CRTP<TemplateList<IAffineSubspace>, Base, Impl, ArgList>::SIVT_CRTP;
+  using SIVT_CRTP<TemplateList<IAffineSubspace>, Base, Impl,
+                  ArgList>::SIVT_CRTP;
 
   Point& point() noexcept { return std::get<Point>(*this); }
-  const Point& point() const noexcept { return const_cast<IAffineRealSubspace*>(this)->point(); }
+
+  const Point& point() const noexcept {
+    return const_cast<IAffineRealSubspace*>(this)->point();
+  }
 
   static const Impl move(const Impl& impl, const Point& p) noexcept {
     return Impl::impl_move(impl, p);
@@ -40,8 +43,8 @@ template<typename Base, typename Impl, typename ArgList>
 
   void init_IAffineRealSubspace(const Point& p) { point() = p; }
 
-private:
-  template<typename Base, typename Impl, typename ArgList>
+ private:
+  template <typename Base, typename Impl, typename ArgList>
   friend struct IAffineSubspace;
 
   const Impl impl_affine_subspace_add(const Vector& v) const noexcept {
@@ -64,6 +67,4 @@ private:
     return static_cast<Impl&>(*this);
   }
 };
-}
-
-#endif //IAFFINEREALSUBSPACE_HXX
+}  // namespace My

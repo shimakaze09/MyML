@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef IMETRIC_HXX
-#define IMETRIC_HXX
+#pragma once
 
 #include "Arg.hxx"
 
@@ -24,5 +23,3 @@ struct IMetric : Base {
   }
 };
 }  // namespace My
-
-#endif  //IMETRIC_HXX

@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef TRANSFORM_HXX
-#define TRANSFORM_HXX
+#pragma once
 
 #include "BBox.hxx"
 #include "Euler.hxx"
@@ -83,5 +82,3 @@ using transformf = transform<float>;
 }  // namespace My
 
 #include "detail/Transform.inl"
-
-#endif  //TRANSFORM_HXX

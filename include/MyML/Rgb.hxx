@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef RGB_HXX
-#define RGB_HXX
+#pragma once
 
 #include "Interfaces/IArray/IArray1D_Util.hxx"
 #include "Interfaces/IArray/IArrayAdd.hxx"
@@ -35,5 +34,3 @@ struct rgb : SIIT_CRTP<TemplateList<IArray1D_Util, IArrayHadamardProduct,
 
 using rgbf = rgb<float>;
 }  // namespace My
-
-#endif  //RGB_HXX

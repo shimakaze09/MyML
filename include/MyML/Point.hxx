@@ -2,8 +2,7 @@
 // Created by Admin on 10/12/2024.
 //
 
-#ifndef POINT_HXX
-#define POINT_HXX
+#pragma once
 
 #include "Vec.hxx"
 
@@ -72,5 +71,3 @@ using pointu2 = pointu<2>;
 using pointu3 = pointu<3>;
 using pointu4 = pointu<4>;
 }  // namespace My
-
-#endif  //POINT_HXX

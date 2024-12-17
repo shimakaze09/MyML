@@ -1,5 +1,4 @@
-#ifndef PLANE_INL
-#define PLANE_INL
+#pragma once
 
 namespace My {
 template <typename T>
@@ -20,5 +19,3 @@ std::istream& plane<T>::impl_in(std::istream& is) {
   return is;
 }
 }  // namespace My
-
-#endif  // PLANE_INL

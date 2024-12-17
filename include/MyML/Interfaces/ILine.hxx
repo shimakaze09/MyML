@@ -2,8 +2,7 @@
 // Created by Admin on 15/12/2024.
 //
 
-#ifndef ILINE_HXX
-#define ILINE_HXX
+#pragma once
 
 #include "IAffineRealSubspace.hxx"
 #include "IOLine.hxx"
@@ -25,4 +24,3 @@ struct ILine : SIVT_CRTP<TemplateList<IAffineRealSubspace, IOLine>, Base, Impl,
   const Point at(F t) const noexcept { return this->point() + t * this->dir(); }
 };
 }  // namespace My
-#endif  //ILINE_HXX

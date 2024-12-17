@@ -2,17 +2,16 @@
 // Created by Admin on 16/12/2024.
 //
 
-#ifndef IOLINE_HXX
-#define IOLINE_HXX
+#pragma once
 
 #include "ILinear.hxx"
 
 #include <tuple>
 
-namespace My{
+namespace My {
 // line in linear subspace
 // 'O' : original point
-template<typename Base, typename Impl, typename ArgList>
+template <typename Base, typename Impl, typename ArgList>
 struct IOLine : std::tuple<Arg_Vector<ArgList>>, Base {
   using Vector = Arg_Vector<ArgList>;
   using F = Arg_F<ArgList>;
@@ -22,9 +21,7 @@ struct IOLine : std::tuple<Arg_Vector<ArgList>>, Base {
   void init_IOLine(const Vector& v) noexcept { dir() = v; }
 
   Vector& dir() noexcept { return std::get<Vector>(*this); }
+
   const Vector& dir() const noexcept { return std::get<Vector>(*this); }
-
 };
-}
-
-#endif //IOLINE_HXX
+}  // namespace My
