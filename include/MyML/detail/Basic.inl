@@ -1,3 +1,6 @@
+#ifndef BASIC_INL
+#define BASIC_INL
+
 #include <type_traits>
 
 namespace My::detail::Basic {
@@ -133,3 +136,5 @@ struct lerp<V<T, N>, F> {
   }
 };
 }  // namespace My::detail::Basic
+
+#endif  // BASIC_INL

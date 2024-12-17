@@ -1,3 +1,6 @@
+#ifndef SVEC_INL
+#define SVEC_INL
+
 namespace My {
 template <typename T>
 static const mat<T, 3> svec<T>::TBN(const vec<T, 3>& n,
@@ -67,3 +70,5 @@ const std::tuple<bool, svec<T>> svec<T>::refract(T etai,
   return {true, svec{x, y, z}};
 }
 }  // namespace My
+
+#endif  // SVEC_INL

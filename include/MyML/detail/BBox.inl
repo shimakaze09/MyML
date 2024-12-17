@@ -1,3 +1,6 @@
+#ifndef BBOX_INL
+#define BBOX_INL
+
 namespace My {
 template <typename T, size_t N>
 bbox<T, N>::bbox()
@@ -121,3 +124,5 @@ bbox<T, N>& bbox<T, N>::intersect_to_self(const bbox& rhs) {
   return *this;
 }
 }  // namespace My
+
+#endif  //   BBOX_INL

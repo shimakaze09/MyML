@@ -1,3 +1,6 @@
+#ifndef PLANE_INL
+#define PLANE_INL
+
 namespace My {
 template <typename T>
 void plane<T>::print(std::ostream& os) const {
@@ -17,3 +20,5 @@ std::istream& plane<T>::impl_in(std::istream& is) {
   return is;
 }
 }  // namespace My
+
+#endif  // PLANE_INL

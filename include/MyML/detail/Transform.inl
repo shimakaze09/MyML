@@ -1,3 +1,6 @@
+#ifndef TRANSFORM_INL
+#define TRANSFORM_INL
+
 namespace My {
 template <typename T>
 inline transform<T>::transform(const mat<T, 4>& m) noexcept
@@ -508,3 +511,5 @@ const ray<T, 3> transform<T>::operator*(const ray<T, 3>& r) const noexcept {
   return {(*this) * r.point(), (*this) * r.dir()};
 }
 }  // namespace My
+
+#endif  // TRANSFORM_INL

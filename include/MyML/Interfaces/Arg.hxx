@@ -2,11 +2,11 @@
 // Created by Admin on 10/12/2024.
 //
 
-#include <MyTemplate/Num.hxx>
-#include <MyTemplate/TypeList.hxx>
-
 #ifndef ARG_HXX
 #define ARG_HXX
+
+#include <MyTemplate/Num.hxx>
+#include <MyTemplate/TypeList.hxx>
 
 namespace My {
 struct Arg_Empty {};
