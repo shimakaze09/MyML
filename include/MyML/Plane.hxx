@@ -27,5 +27,7 @@ struct plane : SIIT_CRTP<TemplateList<IInOut, IPlane>, plane<T>,
 };
 
 using planef = plane<float>;
-}  // namespace My
 
+// maybe error in editor, but no compile error
+static_assert(sizeof(planef) == 6 * sizeof(float));
+}  // namespace My

@@ -32,4 +32,7 @@ struct rgb : SIIT_CRTP<TemplateList<IArray1D_Util, IArrayHadamardProduct,
 };
 
 using rgbf = rgb<float>;
+
+// maybe error in editor, but no compile error
+static_assert(sizeof(rgbf) == 3 * sizeof(float));
 }  // namespace My
