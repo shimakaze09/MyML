@@ -5,24 +5,19 @@
 #pragma once
 
 #include "../IInnerProduct.hxx"
-#include "../ILinear.hxx"
 #include "../INormal.hxx"
-#include "IArrayAdd.hxx"
-#include "IArrayScalarMul.hxx"
+#include "IArrayLinear.hxx"
 
 namespace My {
 // euclidean vector space
 template <typename Base, typename Impl, typename ArgList>
-struct IEuclideanV
-    : SIVT_CRTP<
-          TemplateList<IInnerProduct, ILinear, IArrayScalarMul, IArrayAdd>,
-          Base, Impl, ArgList> {
+struct IEuclideanV : SIVT_CRTP<TemplateList<IInnerProduct, IArrayLinear>, Base,
+                               Impl, ArgList> {
   static constexpr size_t N = Arg_N<ArgList>;
   using F = Arg_F<ArgList>;
 
-  using SIVT_CRTP<
-      TemplateList<IInnerProduct, ILinear, IArrayScalarMul, IArrayAdd>, Base,
-      Impl, ArgList>::SIVT_CRTP;
+  using SIVT_CRTP<TemplateList<IInnerProduct, IArrayLinear>, Base, Impl,
+                  ArgList>::SIVT_CRTP;
 
  private:
   template <typename Base, typename Impl, typename ArgList>

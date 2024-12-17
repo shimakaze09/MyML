@@ -4,10 +4,11 @@
 
 #pragma once
 
+#include "Vec.hxx"
+
 #include "Interfaces/IMatrix/IMatrixInOut.hxx"
 #include "Interfaces/IMatrix/IMatrixMul.hxx"
 #include "Interfaces/IRing.hxx"
-#include "Vec.hxx"
 
 namespace My {
 template <typename T, size_t N>
@@ -25,4 +26,3 @@ using matf = mat<float, N>;
 using matf3 = matf<3>;
 using matf4 = matf<4>;
 }  // namespace My
-

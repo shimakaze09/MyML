@@ -1,5 +1,6 @@
 #pragma once
 
+#include <limits>
 #include <type_traits>
 
 namespace My::detail::Basic {
@@ -71,7 +72,9 @@ struct rmv_epsilon {
 
 template <typename T, size_t N, template <typename T, size_t N> class V>
 struct rmv_epsilon<V<T, N>> {
-  static bool run(const V<T, N>& val) noexcept { return val.is_all_zero(); }
+  static const V<T, N> run(const V<T, N>& val) noexcept {
+    return val.rmv_epsilon();
+  }
 };
 
 template <typename T, template <typename T> class V>
@@ -86,9 +89,7 @@ struct is_zero {
 
 template <typename T, size_t N, template <typename T, size_t N> class V>
 struct is_zero<V<T, N>> {
-  static const V<T, N> run(const V<T, N>& val) noexcept {
-    return val.is_zero();
-  }
+  static bool run(const V<T, N>& val) noexcept { return val.is_all_zero(); }
 };
 
 template <typename T, template <typename T> class V>

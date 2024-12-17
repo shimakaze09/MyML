@@ -5,10 +5,7 @@
 #pragma once
 
 #include "Quat.hxx"
-#include "Vec.hxx"
 
-#include <MyTemplate/SI.hxx>
-#include "Interfaces/IArray/IArray.hxx"
 #include "Interfaces/IArray/IArray1D_Util.hxx"
 
 namespace My {
@@ -21,9 +18,9 @@ struct quat;
 // Tait¨CBryan angles, extrinsic rotations (math: x-y-z, game: z-x-y)
 // ref: https://en.wikipedia.org/wiki/Euler_angles
 template <typename T>
-struct euler : SIIT_CRTP<TemplateList<IArray1D_Util, IArray>, euler<T>,
+struct euler : SIIT_CRTP<TemplateList<IArray1D_Util>, euler<T>,
                          TypeList<TypeList<T, Size<3>>, T>> {
-  using SIIT_CRTP<TemplateList<IArray1D_Util, IArray>, euler<T>,
+  using SIIT_CRTP<TemplateList<IArray1D_Util>, euler<T>,
                   TypeList<TypeList<T, Size<3>>, T>>::SIIT_CRTP;
 
   const quat<T> to_quat() const noexcept;

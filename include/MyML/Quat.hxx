@@ -6,7 +6,6 @@
 
 #include "Euler.hxx"
 #include "Point.hxx"
-#include "Vec.hxx"
 
 #include "Interfaces/IArray/IArrayUtil.hxx"
 #include "Interfaces/IMul.hxx"

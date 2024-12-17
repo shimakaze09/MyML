@@ -4,11 +4,7 @@
 
 #pragma once
 
-#include "Point.hxx"
 #include "Val.hxx"
-#include "Vec.hxx"
-
-#include <limits>
 
 namespace My {
 template <typename T, size_t N>

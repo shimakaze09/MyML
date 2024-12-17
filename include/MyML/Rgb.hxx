@@ -5,9 +5,8 @@
 #pragma once
 
 #include "Interfaces/IArray/IArray1D_Util.hxx"
-#include "Interfaces/IArray/IArrayAdd.hxx"
 #include "Interfaces/IArray/IArrayHadamardProduct.hxx"
-#include "Interfaces/IArray/IArrayScalarMul.hxx"
+#include "Interfaces/IArray/IArrayLinear.hxx"
 #include "Interfaces/ILinear.hxx"
 
 namespace My {
