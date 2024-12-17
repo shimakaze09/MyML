@@ -101,4 +101,3 @@ struct IArray : Base, std::array<Arg_T<ArgList>, Arg_N<ArgList>> {
   }
 };
 }  // namespace My
-

@@ -27,5 +27,3 @@ using scalef2 = scalef<2>;
 using scalef3 = scalef<3>;
 using scalef4 = scalef<4>;
 }  // namespace My
-
-#endif  //SCALE_HXX
