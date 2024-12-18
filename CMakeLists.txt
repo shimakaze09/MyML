@@ -2,7 +2,7 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.20 FATAL_ERROR)
 
 # Project settings
-PROJECT(MyML VERSION 0.4.0 LANGUAGES CXX)
+PROJECT(MyML VERSION 0.4.1 LANGUAGES CXX)
 MESSAGE(STATUS "Project: ${PROJECT_NAME} ${PROJECT_VERSION}")
 
 # Add 'd' to the end of the lib and dll names in debug mode
@@ -31,25 +31,29 @@ SET(CMAKE_LIBRARY_OUTPUT_DIRECTORY_RELEASE "${PROJECT_SOURCE_DIR}/build/lib")
 SET_PROPERTY(GLOBAL PROPERTY USE_FOLDERS ON)
 
 INCLUDE(FETCHCONTENT)
-MESSAGE(STATUS "Finding package: MyCMake v0.4.0")
-FIND_PACKAGE(MyCMake 0.4.0 EXACT QUIET)
-IF(${MyCMake_FOUND})
+MESSAGE(STATUS "Finding package: MyCMake v0.4.1")
+FIND_PACKAGE(MyCMake 0.4.1 EXACT QUIET)
+IF (${MyCMake_FOUND})
     MESSAGE(STATUS "MyCMake found")
-ELSE()
+ELSE ()
     SET(ADDRESS "https://github.com/shimakaze09/MyCMake.git")
     MESSAGE(STATUS "MyCMake not found")
     FETCHCONTENT_DECLARE(
             MyCMake
             GIT_REPOSITORY ${ADDRESS}
-            GIT_TAG "v0.4.0"
+            GIT_TAG "v0.4.1"
     )
     MESSAGE(STATUS "MyCMake fetched")
     FETCHCONTENT_MAKEAVAILABLE(MyCMake)
     MESSAGE(STATUS "MyCMake built")
-ENDIF()
+ENDIF ()
 
 # Set the default install prefix
 INIT_INSTALL_PREFIX()
+
+# Build test
+INIT_TEST_SWITCH()
+# SET(BUILD_TEST ON)
 
 ADD_DEP(MyTemplate 0.3.1)
 
